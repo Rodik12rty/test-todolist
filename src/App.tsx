@@ -235,30 +235,32 @@ function App() {
                                 tasksForTodolist = tasksForTodolist.filter(t => t.isDone === false);
                             }
 
-                            return <Grid>
-                                <Paper elevation={4}>
-                                    <Todolist title={tl.title}
-                                                    tasks={tasksForTodolist}
-                                                    removeTask={removeTask}
-                                                    addTask={addTask}
-                                                    changeTaskStatus={changeStatus}
-                                                    changeTaskTitle={changeTaskTitle}
-                                                    changeFilter={changeFilter}
-                                                    key={tl.id}
-                                                    id={tl.id}
-                                                    filter={tl.filter}
-                                                    removeTodolist={removeTodolist}
-                                                    changeTodolistTitle={changeTodolistTitle}
+                            return (
+                                <Grid key={tl.id}>
+                                    <Paper elevation={4}>
+                                        <Todolist title={tl.title}
+                                                        tasks={tasksForTodolist}
+                                                        removeTask={removeTask}
+                                                        addTask={addTask}
+                                                        changeTaskStatus={changeStatus}
+                                                        changeTaskTitle={changeTaskTitle}
+                                                        changeFilter={changeFilter}
+                                                        key={tl.id}
+                                                        id={tl.id}
+                                                        filter={tl.filter}
+                                                        removeTodolist={removeTodolist}
+                                                        changeTodolistTitle={changeTodolistTitle}
 
-                                                    dragStartHandler={dragStartHandler}
-                                                    dragLeaveHandler={dragLeaveHandler}
-                                                    dragEndHandler={dragEndHandler}
-                                                    dragOverHandler={dragOverHandler}
-                                                    dropHandler={dropHandler}
-                                                    todolist={tl}
-                                        />
-                                </Paper>
-                            </Grid>
+                                                        dragStartHandler={dragStartHandler}
+                                                        dragLeaveHandler={dragLeaveHandler}
+                                                        dragEndHandler={dragEndHandler}
+                                                        dragOverHandler={dragOverHandler}
+                                                        dropHandler={dropHandler}
+                                                        todolist={tl}
+                                            />
+                                    </Paper>
+                                </Grid>
+                            )
 
                         })
                     }
